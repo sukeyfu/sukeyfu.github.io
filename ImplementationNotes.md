@@ -161,4 +161,24 @@ started with React.
 
 To use react in a project we can load two React scripts from an external website called unpkg.com: 
 
+* react is the core react library
+* react-dom provides DOM-specific methods that enable you to use React with the DOM 
+
+```html 
+<!-- index.html --> 
+
+<script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+```
+
+Instead of directly manipulating the DOM with plain Javascript you can use `ReactDOM.render()` from
+`react-dom` to tell React to render our `<h1>` title inside our app element. 
+
+```javascript
+<script type="text/javascript">
+	const app = document.getElementById('app');
+	ReactDOM.render(<h1>Develop. Preview. Ship. </h1>, app);
+</script>
+```
+
  

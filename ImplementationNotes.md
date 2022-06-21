@@ -181,4 +181,152 @@ Instead of directly manipulating the DOM with plain Javascript you can use `Reac
 </script>
 ```
 
+When this code is run in the browser we end up with a syntax error because `<h1>...</h1>` is not 
+valid Javascript - it is JSX 
+
+
+### What is JSX? 
+
+JSX is a syntax extension for Javascript that allows you to describe your UI in a familiar HTML-like
+syntax. The nice thing about JSX is that a part from the three JSX rules there is no need to learn 
+any new symbols or syntax outside of HTML and JavaScript: 
+
+* Return a single root element: to return multiple elements from a component, wrap them with a single
+  parent tag - for example you can use a <div>
+
+* Close all the tags: JSX requires tags to be explicitly closed: self-closing tags like <img> must 
+  become <img/> 
+
+* camelCase most of the things: JSX turns into JavaScript and attributes written in JSX become keys
+  of JavaScript objects. In components you will often want to read these attributes into variables. 
+  JavaScript has limitations on variable names - their names cannot contain dashes or be reserved 
+  words like class. This is why many HTML and SVG attributes are written in camelCase, so instead 
+  of stroke-width we use strikeWidth 
+
+
+Note that browsers do not understand JSX out of the box, so we need a JavaScript compiler such as 
+Babel, to transform JSX code into regular JavaScript
+
+
+### Adding Babel to the project 
+
+To add Babel to the project, copy the following script in `index.html` file: 
+
+```javascript
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+``` 
+
+In addition we need to inform Babel what code to transform by changing the script type to 
+`type=text/jsx`. 
+
+
+We can see that comparing the declarative React code with the imperative Javascript code, React 
+allows us to cut down on a lot of repetitive code. 
+
+
+### Essential JavaScript for React 
+
+Would be helpful to brush up on core JavaScript principles before diving into React 
+
+
+### React Core Concepts 
+
+There are three core concepts of React that you need to be familiar with to start building React 
+applications. These are: 
+
+* Components 
+* Props 
+* State 
+
+
+
+### Building UI with Components 
+
+User interfaces can be broken down into smaller building blocks called components. Components allow
+you to build self-contained, reusable snippets of code. If you think of components as LEGO bricks, 
+you can take individual bricks and combine them together to form larger structures. If you 
+need to update a piece of the UI you can update the specific component or brick. 
+
+
+This modularity allows the code to be more maintanable as it grows since you can easily add, update
+and delete components without touching the rest of the application. 
+
+The nice thing about React components if that they are just JavaScript. THe following is an example 
+of a React component: 
+
+
+### Creating components 
+
+In React, components are functions - a component is a function that returns UI elements. Inside the
+return statement of the function you can write JSX: 
+
+```
+function Header() {
+	return (<h1>Develop. Preview. Ship. </h1>)
+}
+``` 
+
+To render this component to the DOM, you can pass it as an argument in the `ReactDOM.render()` 
+method: 
+
+```
+const app = document.getElementById("app")
+
+function Header() {
+...
+} 
+
+ReactDOM.render(<Header/>, app)
+```
+
+
+Note that React components should be capitalized to distinguish them from plain HTML and JavaScript.
+React components should also be used the same way we would use regular HTML tags with angle brackets
+`<>`. 
+
+
+### Nesting Components 
+
+Applications usually include more content than a single component - you can nest React components 
+inside each other like you would with regular HTML elements. 
+
+This could look something like: 
+
+```
+function Header() {
+	return <h1>Develop. Preview. Ship.</h1>
+} 
+
+function HomePage() {
+	return (
+		<div> 
+			{/* Nesting the Header component */}
+			<Header />
+		</div>
+	);
+}
+
+ReactDOM.render(<Header />, app);
+```
+
+ 
+### Component Trees 
+
+You can keep nesting React components this way to form component trees. For example a HomePage 
+component could hold a `Header`, an `Article` and a `Footer` component. These components can in 
+turn have their own child components and so on. The `Header` could contain a `Logo`, `Title` and 
+`Navigation` component. 
+
+This modular format allows you to reuse components in different places inside your app. In the 
+previous example, since Homepage is the top-level component, you can pass it to the 
+ReactDOM.render() method. Next we discuss props and how to use them to pass data between components.
+
+
+### Displaying Data with Props 
+
+
+
+
+
+  
  

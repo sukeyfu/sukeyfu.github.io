@@ -324,9 +324,63 @@ ReactDOM.render() method. Next we discuss props and how to use them to pass data
 
 ### Displaying Data with Props 
 
+If we were to reuse the `<Header />` component, it would display the same content both times: 
+
+```
+function Header() {
+	return <h1>Develop. Preview. Ship.</h1>
+}
+
+function HomePage() {
+	return (
+		<div> 
+			<Header /> 
+			<Header />
+		</div>
+	);
+}
+```
+
+What if we want to pass different text or you do not know the information ahead of time because we
+are fetching data from an external source? 
+
+Regular HTML elements have attributes that we can use to pass pieces of information that change the 
+behavior of those elements. For example, changing the `src` attribute of an `<img>` element changes 
+the image that is shown. Changing the `href` attribute of an `<a>` tag changes the destination of 
+the link.
 
 
+In the same way, we can pass pieces of information as properties to React components. These are 
+referred to as `props`.
 
 
-  
+Similar to a JavaScript function, you can design components that accept custom arguments (or props)
+that change the component's behavior or what is visibly shown when it is rendered to the screen. 
+These props can then be passed from parent components to child components. 
+
+> In React, data flows down the component tree. This is referred to as one-way data flow. State, 
+which will be discussed below, can be passed from parent to child components as props. 
+
+
+### Using props 
+
+In the `Homepage` component, we can pass a custom `title` prop to the `Header` component just 
+like you would pass HTML attributes. 
+
+```javascript 
+function HomePage() {
+	return (
+		<div>
+			<Header title="React" />
+		</div>
+	);
+}
+
+function Header(props) {
+
+}  
+```
+
+If we use `console.log()` on props, we can see that it is an object with a title property. Since 
+props is an object, we can use object destructuring to explicitly name the values  
  

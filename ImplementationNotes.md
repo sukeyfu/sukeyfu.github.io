@@ -382,5 +382,6 @@ function Header(props) {
 ```
 
 If we use `console.log()` on props, we can see that it is an object with a title property. Since 
-props is an object, we can use object destructuring to explicitly name the values  
+props is an object, we can use object destructuring to explicitly name the values of props inside 
+your function parameters:  
  

@@ -383,5 +383,32 @@ function Header(props) {
 
 If we use `console.log()` on props, we can see that it is an object with a title property. Since 
 props is an object, we can use object destructuring to explicitly name the values of props inside 
-your function parameters:  
+your function parameters. We can replace the content of the `<h1>` tag with your title variable. 
+
+```javascript 
+function Header({ title }) {
+	console.log(title);
+	return <h1>title</h1>;
+}
+```
+
+
+If this is opened in the browser we see that it displays the actual word title - react thinks that 
+we are intending to render a plain text string to the DOM. We need a way to denote to React that 
+this a JavaScript variable. 
+
+
+### Using Variables in JSX
+
+To use the variable defined, we can use curly braces `{}`, a special JSX syntax that allows us to 
+write regular JavaScript directly inside of the JSX markup. 
+
+```javascript 
+return <h1>{title}</h1>;
+```
+
+we can think of curly braces as a way to enter Javascript land when using JSX. Any JavaScript 
+expression (that evalues to a single value) can be used inside curly braces. This includes: 
+
+1.   
  

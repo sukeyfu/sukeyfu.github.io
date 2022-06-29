@@ -410,5 +410,594 @@ return <h1>{title}</h1>;
 we can think of curly braces as a way to enter Javascript land when using JSX. Any JavaScript 
 expression (that evalues to a single value) can be used inside curly braces. This includes: 
 
-1.   
+1. An object property with dot notation
+
+```javascript 
+function Header(props) {
+	return <h1>{props.title}</h1>;
+}
+```
+
+2. A template literal: 
+
+```javascript 
+function Header({ title }) {
+	return <h1>{`Cool ${title}`}</h1>;
+}
+```
+
+3. The returned value of a function 
+
+```javascript 
+function createTitle(title){
+	if (title){
+		return titiel; 
+	} else {
+		return `Default title`;
+	}
+}
+
+function Header({ title }) {
+	return <h1>{createTitle(title)}</h1>;
+}
+
+4. Ternary operators 
+
+3. The returned value of a function 
+
+```javascript 
+function createTitle(title){
+	if (title){
+		return titiel; 
+	} else {
+		return `Default title`;
+	}
+}
+
+function Header({ title }) {
+	return <h1>{createTitle(title)}</h1>;
+}
+
+4. Ternary operators 
+
+3. The returned value of a function 
+
+```javascript 
+function createTitle(title){
+	if (title){
+		return titiel; 
+	} else {
+		return `Default title`;
+	}
+}
+
+function Header({ title }) {
+	return <h1>{createTitle(title)}</h1>;
+}
+
+4. Ternary operators 
+
+3. The returned value of a function 
+
+```javascript 
+function createTitle(title){
+	if (title){
+		return titiel; 
+	} else {
+		return `Default title`;
+	}
+}
+
+function Header({ title }) {
+	return <h1>{createTitle(title)}</h1>;
+}
+
+4. Ternary operators 
+
+3. The returned value of a function 
+
+```javascript 
+function createTitle(title){
+	if (title){
+		return titiel; 
+	} else {
+		return `Default title`;
+	}
+}
+
+function Header({ title }) {
+	return <h1>{createTitle(title)}</h1>;
+}
+
+4. Ternary operators 
+
+3. The returned value of a function 
+
+```javascript 
+function createTitle(title){
+	if (title){
+		return titiel; 
+	} else {
+		return `Default title`;
+	}
+}
+
+function Header({ title }) {
+	return <h1>{createTitle(title)}</h1>;
+}
+
+4. Ternary operators 
+
+3. The returned value of a function 
+
+```javascript 
+function createTitle(title){
+	if (title){
+		return titiel; 
+	} else {
+		return `Default title`;
+	}
+}
+
+function Header({ title }) {
+	return <h1>{createTitle(title)}</h1>;
+}
+
+4. Ternary operators 
+
+3. The returned value of a function 
+
+```javascript 
+function createTitle(title){
+	if (title){
+		return titiel; 
+	} else {
+		return `Default title`;
+	}
+}
+
+function Header({ title }) {
+	return <h1>{createTitle(title)}</h1>;
+}
+
+4. Ternary operators 
+
+3. The returned value of a function 
+
+```javascript 
+function createTitle(title){
+	if (title){
+		return titiel; 
+	} else {
+		return `Default title`;
+	}
+}
+
+function Header({ title }) {
+	return <h1>{createTitle(title)}</h1>;
+}
+
+4. Ternary operators 
+
+3. The returned value of a function 
+
+```javascript 
+function createTitle(title){
+	if (title){
+		return titiel; 
+	} else {
+		return `Default title`;
+	}
+}
+
+function Header({ title }) {
+	return <h1>{createTitle(title)}</h1>;
+}
+
+4. Ternary operators 
+
+3. The returned value of a function 
+
+```javascript 
+function createTitle(title){
+	if (title){
+		return titiel; 
+	} else {
+		return `Default title`;
+	}
+}
+
+function Header({ title }) {
+	return <h1>{createTitle(title)}</h1>;
+}
+
+4. Ternary operators 
+
+3. The returned value of a function 
+
+```javascript 
+function createTitle(title){
+	if (title){
+		return titiel; 
+	} else {
+		return `Default title`;
+	}
+}
+
+function Header({ title }) {
+	return <h1>{createTitle(title)}</h1>;
+}
+
+4. Ternary operators 
+
+3. The returned value of a function 
+
+```javascript 
+function createTitle(title){
+	if (title){
+		return titiel; 
+	} else {
+		return `Default title`;
+	}
+}
+
+function Header({ title }) {
+	return <h1>{createTitle(title)}</h1>;
+}
+
+4. Ternary operators 
+
+3. The returned value of a function 
+
+```javascript 
+function createTitle(title){
+	if (title){
+		return titiel; 
+	} else {
+		return `Default title`;
+	}
+}
+
+function Header({ title }) {
+	return <h1>{createTitle(title)}</h1>;
+}
+
+4. Ternary operators 
+
+3. The returned value of a function 
+
+```javascript 
+function createTitle(title){
+	if (title){
+		return titiel; 
+	} else {
+		return `Default title`;
+	}
+}
+
+function Header({ title }) {
+	return <h1>{createTitle(title)}</h1>;
+}
+
+4. Ternary operators 
+
+3. The returned value of a function 
+
+```javascript 
+function createTitle(title){
+	if (title){
+		return titiel; 
+	} else {
+		return `Default title`;
+	}
+}
+
+function Header({ title }) {
+	return <h1>{createTitle(title)}</h1>;
+}
+
+4. Ternary operators 
+
+3. The returned value of a function 
+
+```javascript 
+function createTitle(title){
+	if (title){
+		return titiel; 
+	} else {
+		return `Default title`;
+	}
+}
+
+function Header({ title }) {
+	return <h1>{createTitle(title)}</h1>;
+}
+
+4. Ternary operators 
+
+3. The returned value of a function 
+
+```javascript 
+function createTitle(title){
+	if (title){
+		return titiel; 
+	} else {
+		return `Default title`;
+	}
+}
+
+function Header({ title }) {
+	return <h1>{createTitle(title)}</h1>;
+}
+
+4. Ternary operators 
+
+3. The returned value of a function 
+
+```javascript 
+function createTitle(title){
+	if (title){
+		return titiel; 
+	} else {
+		return `Default title`;
+	}
+}
+
+function Header({ title }) {
+	return <h1>{createTitle(title)}</h1>;
+}
+
+4. Ternary operators 
+
+3. The returned value of a function 
+
+```javascript 
+function createTitle(title){
+	if (title){
+		return titiel; 
+	} else {
+		return `Default title`;
+	}
+}
+
+function Header({ title }) {
+	return <h1>{createTitle(title)}</h1>;
+}
+
+4. Ternary operators 
+
+3. The returned value of a function 
+
+```javascript 
+function createTitle(title){
+	if (title){
+		return titiel; 
+	} else {
+		return `Default title`;
+	}
+}
+
+function Header({ title }) {
+	return <h1>{createTitle(title)}</h1>;
+}
+
+4. Ternary operators 
+
+3. The returned value of a function 
+
+```javascript 
+function createTitle(title){
+	if (title){
+		return titiel; 
+	} else {
+		return `Default title`;
+	}
+}
+
+function Header({ title }) {
+	return <h1>{createTitle(title)}</h1>;
+}
+
+4. Ternary operators 
+
+3. The returned value of a function 
+
+```javascript 
+function createTitle(title){
+	if (title){
+		return titiel; 
+	} else {
+		return `Default title`;
+	}
+}
+
+function Header({ title }) {
+	return <h1>{createTitle(title)}</h1>;
+}
+
+4. Ternary operators 
+
+3. The returned value of a function 
+
+```javascript 
+function createTitle(title){
+	if (title){
+		return titiel; 
+	} else {
+		return `Default title`;
+	}
+}
+
+function Header({ title }) {
+	return <h1>{createTitle(title)}</h1>;
+}
+
+4. Ternary operators 
+
+3. The returned value of a function 
+
+```javascript 
+function createTitle(title){
+	if (title){
+		return titiel; 
+	} else {
+		return `Default title`;
+	}
+}
+
+function Header({ title }) {
+	return <h1>{createTitle(title)}</h1>;
+}
+
+4. Ternary operators 
+
+3. The returned value of a function 
+
+```javascript 
+function createTitle(title){
+	if (title){
+		return titiel; 
+	} else {
+		return `Default title`;
+	}
+}
+
+function Header({ title }) {
+	return <h1>{createTitle(title)}</h1>;
+}
+
+4. Ternary operators 
+
+3. The returned value of a function 
+
+```javascript 
+function createTitle(title){
+	if (title){
+		return titiel; 
+	} else {
+		return `Default title`;
+	}
+}
+
+function Header({ title }) {
+	return <h1>{createTitle(title)}</h1>;
+}
+
+4. Ternary operators 
+
+3. The returned value of a function 
+
+```javascript 
+function createTitle(title){
+	if (title){
+		return titiel; 
+	} else {
+		return `Default title`;
+	}
+}
+
+function Header({ title }) {
+	return <h1>{createTitle(title)}</h1>;
+}
+
+4. Ternary operators 
+
+3. The returned value of a function 
+
+```javascript 
+function createTitle(title){
+	if (title){
+		return titiel; 
+	} else {
+		return `Default title`;
+	}
+}
+
+function Header({ title }) {
+	return <h1>{createTitle(title)}</h1>;
+}
+
+4. Ternary operators 
+
+3. The returned value of a function 
+
+```javascript 
+function createTitle(title){
+	if (title){
+		return titiel; 
+	} else {
+		return `Default title`;
+	}
+}
+
+function Header({ title }) {
+	return <h1>{createTitle(title)}</h1>;
+}
+
+4. Ternary operators 
+
+3. The returned value of a function 
+
+```javascript 
+function createTitle(title){
+	if (title){
+		return titiel; 
+	} else {
+		return `Default title`;
+	}
+}
+
+function Header({ title }) {
+	return <h1>{createTitle(title)}</h1>;
+}
+
+4. Ternary operators 
+
+3. The returned value of a function 
+
+```javascript 
+function createTitle(title){
+	if (title){
+		return titiel; 
+	} else {
+		return `Default title`;
+	}
+}
+
+function Header({ title }) {
+	return <h1>{createTitle(title)}</h1>;
+}
+
+4. Ternary operators 
+
+3. The returned value of a function 
+
+```javascript 
+function createTitle(title){
+	if (title){
+		return titiel; 
+	} else {
+		return `Default title`;
+	}
+}
+
+function Header({ title }) {
+	return <h1>{createTitle(title)}</h1>;
+}
+
+4. Ternary operators 
+
+```javascript 
+function Header({ title }) {
+	return <h1>{title ? title : `Default Title`}</h1>;
+}
+```
+
+You can pass any string to the title prop since we have accounted for the default case in the 
+component with the ternary operator. The component now accepts a generic title prop which we can 
+reuse in different parts of the application - all we need to do is change the title. 
+
+### Iterating through lists 
+
+   
  

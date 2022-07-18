@@ -1014,7 +1014,7 @@ function HomePage() {
 		<div> 
 			<ul> 
 				{names.map((name) => (
-					<li>{name}</li>
+					<li key={name}>{name}</li>
 				))}
 			</ul>
 		</div>
@@ -1023,4 +1023,26 @@ function HomePage() {
 ```
 
 
-Notice how we use the curly braces to weave  
+Notice how we use the curly braces to weave in between JavaScript and JSX. Also note that if we do
+not pass the key prop - React will give a warning about the missing `key` prop. This is because 
+React needs something to uniquely identify items in an array so that it knows which elements to 
+update in the DOM. 
+
+We are using names for now since they are currently unique but it is recommended to use something 
+guaranteed to be unique such as item ID. Next we look into state and how to listen to user events 
+in React.
+
+
+### Adding Interactivity with State 
+
+Let us explore how React helps us add interactivity with state and event handlers. As an example, 
+let's create a like button in the project - start with adding a button element to the code: 
+
+
+```javascript 
+<button>Like</button> 
+```
+
+### Listening to Events
+
+  

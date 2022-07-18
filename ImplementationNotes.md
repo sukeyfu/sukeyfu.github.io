@@ -999,5 +999,28 @@ reuse in different parts of the application - all we need to do is change the ti
 
 ### Iterating through lists 
 
-   
- 
+It is common to have data that you need to show as a list. You can use array methods to manipulate
+your data and generate UI elements that are identical in style but hold different pieces of 
+information. 
+
+We can add an array of names to the `HomePage` component and use the `array.map()` method to iterate
+over the array and use an arrow function to map a name to a list item: 
+
+```javascript
+function HomePage() {
+	const names = ['Kung Fu Panda', 'Finding Nemo', 'Lion King'];
+	
+	return (
+		<div> 
+			<ul> 
+				{names.map((name) => (
+					<li>{name}</li>
+				))}
+			</ul>
+		</div>
+	);
+}
+```
+
+
+Notice how we use the curly braces to weave  

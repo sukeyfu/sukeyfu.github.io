@@ -1045,4 +1045,99 @@ let's create a like button in the project - start with adding a button element t
 
 ### Listening to Events
 
-  
+To make the button do something when clicked you can make use of the onclick event. In React, event
+names are camelCased. The onClick event is one of many possible events you can use to respond to 
+user interaction. 
+
+
+### Handling Events 
+
+We can define a function handle events when they are triggered - for example the following code 
+use the handleLick() function to deal with the click event. 
+
+```javascript
+function handleClick() {
+	console.log('increment like count')
+}
+
+return (
+	<div> 
+		<button onClick={handleClick}>Like</button>
+	<div>
+);
+```
+
+### State and Hooks 
+
+React has a set of functions called hooks - hooks allow you to add additional logic such as state 
+to the components. You can think of state as information in the UI that changes over time, usually 
+triggered by user interaction. 
+
+We can use state to store and increment the number of times a user has clicked the like button. 
+The React hook to manage state is called `useState()`
+
+```javascript 
+function HomePage() {
+	React.useState();
+}
+```
+
+`useState()` returns an array and we can access and use those array values inside the component 
+using array destructuring: 
+
+```javascript
+const [value, update] = React.useState();
+```
+
+The first item in the array is the state `value` which we can name anything - it is recommended that
+the name be descriptive. 
+
+The second item in the array is a function to update the value. The name can be set to anything but 
+it is common to prefix it with `set` followed by the name of the state variable that we are updating. 
+For the previous likes example, the complete code could look something like this: 
+
+```javascript
+function HomePage() {
+	const [likes, setLikes] = useState()
+	
+	function handleClick() {
+		setLikes(likes+1)
+	}
+
+	return (
+		<div>
+			{/* ... */}
+			<button onClick={handleClick}>Likes ({likes})</button>
+		</div>
+	)
+} 
+```
+
+Clicking the button calls the handleClick function which calls the setLikes state updater function 
+with a single argument of the current number of likes+1
+
+> unlike props which are passed to components as the first function parameter, the state is initiated
+> and stored within a component. You can pass the state information to children components as props
+> but the logic for updating the state should be kept within the component where state was intially 
+> created 
+
+### From React to Next.js
+
+While React excels at building UI it does take some work to independently build that UI into a fully
+functioning scalable application. Next.js handles muhc of the setup and configuration and has 
+additional features to help build React applications. 
+
+So far we have been introduced to three essential React concepts: components, props and state
+Having a strong foundation will help to get started building React applications and things to look 
+at later would be: 
+
+	* How react handles renders and how to use refs
+	* How to manage state 
+	* How to use context for deeply nested data
+	* How to use React API hooks such as useEffect()
+
+
+### Getting Started with Next.js
+
+To add Next.js to the project - you will not need to load the react and react-dom scripts from 
+unpkg.com anymore. Instead, we install these packages locally using the node package manager. 

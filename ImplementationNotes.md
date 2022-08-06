@@ -1140,4 +1140,65 @@ at later would be:
 ### Getting Started with Next.js
 
 To add Next.js to the project - you will not need to load the react and react-dom scripts from 
-unpkg.com anymore. Instead, we install these packages locally using the node package manager. 
+unpkg.com anymore. Instead, we install these packages locally using the node package manager.
+
+Jumping back to the index.html file, the next js code does not require the following aspects of 
+react code. 
+
+1. The react and react-dom scripts since they have been installed with npm 
+2. The html and body tags because Next,js will create them 
+3. Code that interacts with the app element and ReactDom.render() method
+4. Babel script because Next.js has a compiler that transforms JSX into valid javascript browsers 
+   can understand 
+5. The script type="text/jsx" tag
+6. The React. part of the React.useState(0) function 
+
+ 
+ ### NextJS 
+
+ To build a complete web application with React from scratch there are many details which need to be considered: 
+
+ * Code needs to be bundled using bundler like webpack and transformed using a compiler like Babel
+ * Need to do production optimizations such as code splitting 
+ * Might want to statically pre-render some pages for performance and SEO - might also want server-side rendering or client-side rendering 
+ * Might need to server-side code to connect the React app to the datastore
+
+ A framework can be used to solve these problems given that they provide the right level of abstraction - this is where next.js comes in. 
+
+Let's get into things and start with learning the basics by creating a simple blog app. 
+
+### Link
+
+The Link component enables client-side navigation between two pages in the same Next.js app. This means that the page transition happens using JavaScript which is faster than the default navigation done by the browser. 
+
+We can see that if we change the color of a page using devtools and navigate between the page transitions - the color change persists. This demonstrates that the browser does not load the full page and client-side navigation is working.
+
+
+### Code splitting and prefetching 
+
+Next.js does code splitting automatically so each page only loads what is necessary for that page - meaning when homepage is rendered, the code for other pages is not served initially. 
+
+This ensures that the homepage loads quickly even if we have hundreds of pages.
+
+Only loading code for the page requrested also means that pages becomes isolated - if a certain page throws an error, the rest of the application would still work. 
+
+In production build for Next.js - whenever link components appear in the browser's viewport Next.js will automatically prefetch the code for the linked page in the background. This makes page transitions near-instant. 
+
+> If you need to link to an external page - just use an <a> tag without link 
+
+> If we need to add attributes like className - add it to the a tag, not to the Link tag
+
+### Styling
+
+Next.js has built-in support for CSS and Sass - we will be covering the CSS portion for this project.
+
+In addition we will also go over how Next.js handles static assets like images and page metadata like the `<title>` tag. 
+
+NextJS can serve static assets like images under the top-level `public` directory. Files inside `public` can be referenced from the root of the application similar to `pages`. 
+
+The public directory is also useful for robots.text, google site verification and any other static assets. 
+
+
+
+
+

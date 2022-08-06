@@ -1199,6 +1199,40 @@ NextJS can serve static assets like images under the top-level `public` director
 The public directory is also useful for robots.text, google site verification and any other static assets. 
 
 
+If we are using regular HTML, we can add the profile picture as follows: 
+
+```
+<img src="/images/profile.jpg" alt="Name">
+``` 
+
+Doing so however means that you need to manually handle: 
+
+	* Ensuring the image is responsive on different screen sizes 
+	* Optimizing images with a third-party tool or library 
+	* Only loading images when they enter the viewport
+
+NextJS provides and `Image` component out of the box to handle this for you. Next.js has support for Image Optimization by default which allows for resizing, optimizing and serving images in modern formats like WebP when the browser supports it. This avoids shipping large images to devices with a smaller viewport. It also allows Next.js to automatically adopt future image formats and serve them to browsers that support those formats. 
+
+Instead of optimizing images at build, Next.js optimizes images on-demand as users request them. Unlike static stie generators the build times are not increased whether shipping 10 images or 10 million images. 
+
+Images are lazy loaded by default so the page speed isn't penalized for images outside the viewport. Images load as they are scrolled into viewport.
+
+### Metadata 
+
+If we wanted to modify the metadata of the page such as the `<title>` html tag, we make sure of the <Head> component. Unlike the lower case <head>, <Head> is a react component built into next js and allows us to modify the <head> of a page. 
+
+### Scripts
+
+In addition to metadata, scripts that need to load and execute as soon as possible are usually added to the <head> of a page. 
+
+`next/script` is an extension of the HTML `<script>` element and optimizes when additional scripts are fetched and executed. 
+
+This component has a few additional properties
+	* `strategy` controls when the third-party script should load. A value of `lazyOnload` tells Next.js to load this particular script lazily during browser idle time
+	* `onLoad` is used to run any JS code immediately after the script has finished loading. 
 
 
+### CSS Styling
+
+One of the built in support methods for CSS offered by Next.js is `styled-jsx`. This is a CSS in JS library that allows for writing CSS within a React component and these styles will be scoped (other components will not be affected). 
 

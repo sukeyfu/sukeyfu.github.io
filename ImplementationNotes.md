@@ -1374,3 +1374,9 @@ Time to first byte will be slower than getStaticProps since the server must comp
 Here we will discuss the case where each page path depends on external data - next.js allows us to statically generate pages with paths that depend on external data. This enables dynamic URLs in Next.js and want them for our blog posts. 
 
 To implement this we create a page called `[id].js` - pages that begin with `[` and end with `]` are dynamic routes in Next.js.
+
+### API Routes
+
+Next.js also has support API Routes which allow us to create an API endpoint as a Node.js serverless function (also known as Lambdas). 
+
+A good use case for this would be handling form input. It is possible to create a form on the webpage and have it send a post request to an API route - we can then write code to directly save this data to a database. This API route code will not be part of the client bundle so we can safely write server-side code.

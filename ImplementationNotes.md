@@ -1236,3 +1236,141 @@ This component has a few additional properties
 
 One of the built in support methods for CSS offered by Next.js is `styled-jsx`. This is a CSS in JS library that allows for writing CSS within a React component and these styles will be scoped (other components will not be affected). 
 
+Another method which is used in this project is CSS Modules which allows us to import CSS files in a React component. In order to use CSS Modules the CSS file name must end with `.module.css`.
+
+```javascript
+import styles from './layout.module.css';
+
+export default function Layout({ children }) {
+  return <div className={styles.container}>{children}</div>;
+}
+```
+
+If we take a look at the HTML in the browser's devtools, we will notice that the `div` rendered by the `Layout` component has a class name that looks like `layout_container_...`. 
+
+This is what is being does by css modules - it automatically generates unique class names. As long as we use CSS Modules, we do not need to worry about class name collisions. 
+
+Next.js's code splitting feature works on CSS Modules as well - it ensures the minimal amount of CSS is loaded for each page. This results in smaller bundle sizes.
+
+CSS Modules are useful for component-level styles. If you want some CSS to be loaded by every page, Next.js has support for that as well. 
+
+We make use of the `App` component (in `pages/_app.js`) which is the top level component which will be common across all different pages. We can use this app component to keep state when navigating between pages as well.
+
+Global CSS files can be added by importing them from `pages/_app.js` - we cannot import global CSS anywhere else. 
+
+### Additional Styling Tricks
+
+Classnames is a simple library that allows for toggling classnames easily. For example if we want an alert to be colored differently if it was a success or an error - we can use classnames to toggle the class name while keeping the styling as just 
+
+```css
+.success {
+	color: green;
+}
+.error {
+	color: red;
+}
+```
+
+
+### Data Fetching 
+
+Next we will cover how to fetch external blog data for the app - the blog content will be stored in the file system but will also work if the content is stored elsewhere. 
+
+This will cover: 
+	* next.js' pre-rendering feature 
+	* two forms of pre-rendering, static generation and server-side rendering
+	* static generation with data and without data
+	* getStaticProps and how to use it import external data into the index page 
+
+
+### Pre-rendering 
+
+By default Next.js pre-renders every page - meaning that next.js generates HTML for each page in advance instead of having it all done by client-side JavaScript. Pre-rendering can result in better performance and search engine optimization. 
+
+Each generated HTML is associated with minimal JS code necessary for that page - when a page is loaded by the browser, its JS code runs and makes the page fully interactive (process known as hydration)
+
+There are two forms of pre-rendering offered by Next.js: Static Generation and Server-side Rendering. 
+
+* Static generation is the pre-rendering method that generates the HTML at build time - the pre-rendered html is then reused on each request
+
+* Server-side rendering is the pre-rendering method that generates the HTML on each request
+
+
+### Per-page Basis
+
+Next.js allows for choosing which pre-rendering form we want to use for each page - we can create a hybrid Next.js app by choosing static generation for most pages and using server-side rendering for others.
+
+Static generation is suggested whenever possible since the page can be built once and served by CDN which makes it faster than having a server render the page for each request
+
+Examples of good pages to use this with include:
+	* Marketing pages
+	* blog posts
+	* e-commerce product listings
+	* help and documentation
+
+Static generation is not a good idea if you cannot pre-render a page ahead of the user's request. This would be the case when the page contains frequently updated data and where the page content changes on every request. 
+
+### Static Generation with Data
+
+FOr some pages you might not be able to render the HTML without first fetching some external data - perhaps we need to access the file system, fetch external API, or query the database at build time. 
+
+Next.js supports static generation with data out of the box. This works in Next.js thought the getStaticProps function. When we export a page component, we can also export an async function called getStaticProps. If we do this then:
+
+	* `getStaticProps` runs at build time in production and
+	* inside the function we can fetch external data and send it as props to the page 
+
+getStaticProps tells Next.js that this page has some data dependencies so when we pre-render this page at build time - make sure to resolve them first! 
+
+For data in our app we will be using markdown 
+
+```
+---
+title: 'When to Use Static Generation v.s. Server-side Rendering'
+date: '2020-01-02'
+---
+
+Example post
+```
+
+The metadata section at the top - which in this example contains `title` and `date` - is part of a format called YAML Front Matter which can be parsed using a library called gray-matter. 
+
+### Fetch External API
+
+In our current implementation we used getSortedPostsData to fetch data from the file system - we can also fetch data from other sources like an external API and it will work just fine: 
+
+```javascript
+export async function getSortedPostsData() {
+	const res = await fetch('..');
+	return res.json();
+}
+```
+
+We can also query the database directly in a method such as below:
+
+```javascript
+import someDatabaseSDK from 'someDatabaseSDK'
+
+const databaseClient = someDatabaseSDK.createClient(...)
+
+export async function getSortedPostsData() {
+  // Instead of the file system,
+  // fetch post data from a database
+  return databaseClient.query('SELECT posts...')
+}
+```
+
+This works because `getStaticProps` only runs on the server-side and will never run on the client-side. This code will also not be included in the JS bundle for the browser. 
+
+In production build the getStaticProps method runs at build time so we will not be able to sue data that is only available during request time such as query parameters or HTTP headers. 
+
+If data needs to be fetched at request time static generation is not a good idea - we should try server-side rendering or skip pre-rendering.
+
+To use server-side rendering, we need to export `getServerSideProps` instead of `getStaticProps` from the page.
+
+Time to first byte will be slower than getStaticProps since the server must compute the result and it cannot be cached by a CDN without extra configuration.
+
+### Dynamic Routes 
+
+Here we will discuss the case where each page path depends on external data - next.js allows us to statically generate pages with paths that depend on external data. This enables dynamic URLs in Next.js and want them for our blog posts. 
+
+To implement this we create a page called `[id].js` - pages that begin with `[` and end with `]` are dynamic routes in Next.js.

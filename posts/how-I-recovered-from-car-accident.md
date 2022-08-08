@@ -1,5 +1,5 @@
 ---
-title: 'How I Recovered From The Car Accident '
+title: 'How I Recovered From The Car Accident'
 date: '2022-03-27'
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: 'HOW TO PASS CFA LEVEL 2 EXAM IN LESS THAN A MONTH'
+title: 'How to pass CFA level 2 exam in less than a month'
 date: '2022-03-14'
 ---
 

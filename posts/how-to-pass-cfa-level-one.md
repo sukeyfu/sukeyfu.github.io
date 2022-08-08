@@ -1,5 +1,5 @@
 ---
-title: 'HOW TO PASS CFA LEVEL 1 EXAM'
+title: 'How to pass CFA level 1 exam'
 date: '2022-03-13'
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: 'HOW TO PASS COMMON FINAL EXAM (CPA CANADA) EXAM, MY JOURNEY, ETC.'
+title: 'How to pass common final exam (CPA Canada), my journey, etc.'
 date: '2022-03-12'
 ---
 

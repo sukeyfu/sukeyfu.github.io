@@ -30,7 +30,8 @@ Concussions happen often among adults, but it can be challenging for university 
 I really recommend seeing a concussion specialist, as they’re able to give a tailored recovery plan that is a combination of exercises and specialised equipment (i.e. Deadweight Pettibon System) that really reboot your brain. The feeling of “Awakening” after fatigue and brain fog clear up is honestly life-changing. Check out a special visit to my concussion doctor in Calgary!
 
 Thankfully I didn’t have any serious brain damage, but from seeing my Neurologist, the 3 recommendations he made were:
-	Stress management, better mental health, more physical activity.
+	
+> Stress management, better mental health, more physical activity.
 
 Honestly, an oldie but a goodie!
 
